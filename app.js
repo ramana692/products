@@ -18,6 +18,17 @@ app.use((req, res, next) => {
 });
 
 // Routes
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to the E-commerce Products API',
+    endpoints: {
+      getProducts: 'GET /products',
+      addProduct: 'POST /products'
+    },
+    documentation: 'Check the README for more information'
+  });
+});
+
 app.use('/products', productRoutes);
 
 // System information
